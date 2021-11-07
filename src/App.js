@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Table,
@@ -21,7 +22,7 @@ const data = [
   { id: 6, personaje: "Seto Kaiba", anime: "Yu-Gi-Oh!" },
 ];
 
-function App() {
+class App extends React.Component {
   state = {
     data: data,
     modalActualizar: false,
@@ -99,11 +100,12 @@ function App() {
     });
   };
 
+  render() {
     
     return (
       <>
         <Container>
-        <br/>
+        <br />
           <Button color="success" onClick={()=>this.mostrarModalInsertar()}>Crear</Button>
           <br />
           <br />
@@ -263,7 +265,6 @@ function App() {
         </Modal>
       </>
     );
+  }
 }
-
-
 export default App;
